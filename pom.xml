@@ -10,7 +10,7 @@
 	<version>1.0.0</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
-	<description>ZahlAlsWort</description>
+	<description>ZahlAlsWort - Library to convert Numbers to Words</description>
 	<packaging>jar</packaging>
 	<url>https://www.jost-net.de</url>
 
@@ -28,7 +28,6 @@
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<junit.jupiter.version>5.9.2</junit.jupiter.version>
-		<!--	<junit.platform.version>1.9.1</junit.platform.version>-->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
