@@ -1,26 +1,27 @@
 package de.jostnet.ZahlAlsWort;
+
+import java.math.BigDecimal;
+
 /**********************************************************************
- * Copyright (c) by Heiner Jostkleigrewe
- * This program is free software: you can redistribute it and/or modify it under the terms of the 
- * GNU General Public License as published by the Free Software Foundation, either version 3 of the 
- * License, or (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without 
- *  even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See 
- *  the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along with this program.  If not, 
- * see <http://www.gnu.org/licenses/>.
+ * ZahlAlsWort - Java library for translating numbers to words in German with
+ * German rules. Java Bibliothek zur Übersetzung von Zahlen zu Wortes in Deutsch
+ * mit deutschen Regeln
  * 
- * heiner@jost-net.de
+ * Copyright (c) by Heiner Jostkleigrewe
+ * 
+ * @author heiner@jost-net.de
+ * @version 1.0.0
  **********************************************************************/
 
 public class ZahlAlsWort
 {
-	static String get(Zahl zahl)
-	{
-		return get(zahl.getZahl());
-	}
+
+	/**
+	 * Konvertierung eines int-Wertes in ein Wort
+	 * 
+	 * @param zahl
+	 * @return wort
+	 */
 
 	public static String get(int zahl)
 	{
@@ -46,6 +47,44 @@ public class ZahlAlsWort
 			return Millionen.get(z);
 		}
 		return "fehlt noch";
+	}
+
+	/**
+	 * Konvertierung eines BigDecimal-Wertes in ein Wort
+	 * 
+	 * @param zahl
+	 * @return
+	 */
+	public static String get(BigDecimal zahl)
+	{
+		return get(zahl.intValue());
+	}
+
+	/**
+	 * Konvertierung eines Double-Wertes in ein Wort
+	 * 
+	 * @param zahl
+	 * @return
+	 */
+	public static String get(Double zahl)
+	{
+		return get(zahl.intValue());
+	}
+
+	/**
+	 * Konvertierung eines Float-Wertes in ein Wort
+	 * 
+	 * @param zahl
+	 * @return
+	 */
+	public static String get(Float zahl)
+	{
+		return get(zahl.intValue());
+	}
+
+	static String get(Zahl zahl)
+	{
+		return get(zahl.getZahl());
 	}
 
 }
