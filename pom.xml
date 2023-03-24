@@ -5,20 +5,30 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>de.jostnet</groupId>
+	<groupId>de.jost-net</groupId>
 	<artifactId>zahlalswort</artifactId>
 	<version>1.0.0</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>ZahlAlsWort</description>
 	<packaging>jar</packaging>
+	<url>https://www.jost-net.de</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<junit.jupiter.version>5.9.1</junit.jupiter.version>
-		<junit.platform.version>1.9.1</junit.platform.version>
+		<junit.jupiter.version>5.9.2</junit.jupiter.version>
+		<!--	<junit.platform.version>1.9.1</junit.platform.version>-->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -49,6 +59,32 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M6</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
