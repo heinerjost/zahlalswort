@@ -52,7 +52,7 @@ public class ZahlAlsWort
 	/**
 	 * Konvertierung eines BigDecimal-Wertes in ein Wort
 	 * 
-	 * @param zahl
+	 * @param zahl die umgewandelt werden soll
 	 * @return
 	 */
 	public static String get(BigDecimal zahl)
@@ -64,7 +64,7 @@ public class ZahlAlsWort
 	 * Konvertierung eines Double-Wertes in ein Wort
 	 * 
 	 * @param zahl
-	 * @return
+	 * @return die umgewandelt werden soll
 	 */
 	public static String get(Double zahl)
 	{
@@ -74,7 +74,7 @@ public class ZahlAlsWort
 	/**
 	 * Konvertierung eines Float-Wertes in ein Wort
 	 * 
-	 * @param zahl
+	 * @param zahl die umgewandelt werden soll
 	 * @return
 	 */
 	public static String get(Float zahl)
