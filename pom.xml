@@ -7,7 +7,7 @@
 
 	<groupId>de.jost-net</groupId>
 	<artifactId>zahlalswort</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>ZahlAlsWort - Library to convert Numbers to Words</description>
@@ -41,6 +41,23 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<scm>
+		<connection>scm:git:git://github.com/heinerjost/zahlalswort.git</connection>
+		<developerConnection>
+			scm:git:ssh://github.com:heinerjost/zahlalswort.git</developerConnection>
+		<url>https://github.com/heinerjost/zahlalswort</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Heiner Jostkleigrewe</name>
+			<email>heiner@jost-net.de</email>
+			<organization>com.github.heinerjost</organization>
+			<organizationUrl>https://github.com/heinerjost/</organizationUrl>
+		</developer>
+	</developers>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -49,8 +66,47 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
@@ -85,7 +141,28 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+
+		</profile>
+	</profiles>
 
 </project>
