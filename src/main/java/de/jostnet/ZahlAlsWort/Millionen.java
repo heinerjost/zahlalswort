@@ -12,12 +12,12 @@ class Millionen
 		String millionen = "";
 		if (zahl.getMillionenStellen() == 1)
 		{
-			millionen = "einemillion";
+			millionen = "eine Million ";
 		}
 		else
 		{
 			millionen = ZahlAlsWort.get(new Zahl(zahl.getMillionenStellen()))
-					+ "millionen";
+					+ " Millionen ";
 		}
 
 		millionen += Tausender.get(zahl);

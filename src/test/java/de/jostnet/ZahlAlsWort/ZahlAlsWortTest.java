@@ -235,14 +235,21 @@ public class ZahlAlsWortTest
 	@Test
 	void einemillionzweihunderttausendvierhundert()
 	{
-		assertEquals("einemillionzweihunderttausendvierhundert",
+		assertEquals("eine Million zweihunderttausendvierhundert",
 				ZahlAlsWort.get(1200400));
+	}
+
+	@Test
+	void zweihundertMillionenzweihunderttausendvierhundert()
+	{
+		assertEquals("zweihundert Millionen zweihunderttausendvierhundert",
+				ZahlAlsWort.get(200200400));
 	}
 
 	@Test
 	void vierhundertvierundvierzigmillioneneinhundertausend()
 	{
-		assertEquals("vierhundertvierundvierzigmillioneneinhunderttausend",
+		assertEquals("vierhundertvierundvierzig Millionen einhunderttausend",
 				ZahlAlsWort.get(444100000));
 	}
 
