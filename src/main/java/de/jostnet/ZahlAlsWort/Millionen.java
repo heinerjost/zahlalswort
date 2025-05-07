@@ -1,4 +1,5 @@
 package de.jostnet.ZahlAlsWort;
+
 /**********************************************************************
  * Copyright (c) by Heiner Jostkleigrewe
  * 
@@ -9,19 +10,22 @@ class Millionen
 {
 	static String get(Zahl zahl)
 	{
-		String millionen = "";
-		if (zahl.getMillionenStellen() == 1)
+		String millionenstring = "";
+		int millionen = zahl.getZahl() / 1_000_000;
+		if (millionen == 1)
 		{
-			millionen = "eine Million ";
+			millionenstring = "eine Million ";
 		}
 		else
 		{
-			millionen = ZahlAlsWort.get(new Zahl(zahl.getMillionenStellen()))
+			millionenstring = ZahlAlsWort.get(new Zahl(millionen))
 					+ " Millionen ";
 		}
-
-		millionen += Tausender.get(zahl);
-
-		return millionen;
+		int rest = zahl.getZahl() - millionen * 1_000_000;
+		if (rest > 0)
+		{
+			millionenstring += ZahlAlsWort.get(new Zahl(rest));
+		}
+		return millionenstring;
 	}
 }

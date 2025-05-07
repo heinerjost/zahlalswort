@@ -26,6 +26,7 @@ public class ZahlAlsWort
 	public static String get(int zahl)
 	{
 		Zahl z = new Zahl(zahl);
+		String ret = "";
 		if (z.isEiner())
 		{
 			return Einer.get(z);
@@ -44,9 +45,9 @@ public class ZahlAlsWort
 		}
 		if (z.isMillionen())
 		{
-			return Millionen.get(z);
+			ret += Millionen.get(z);
 		}
-		return "fehlt noch";
+		return ret;
 	}
 
 	/**

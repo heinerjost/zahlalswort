@@ -10,19 +10,23 @@ class Tausender
 {
 	static String get(Zahl zahl)
 	{
-		String tausender = "";
-		if (zahl.getTausenderStelle() == 1)
+		String tausenderstring = "";
+		int tausender = zahl.getZahl() / 1_000;
+		if (tausender == 1)
 		{
-			tausender = "ein";
+			tausenderstring = "ein";
 		}
 		else
 		{
-			tausender = ZahlAlsWort.get(new Zahl(zahl.getTausenderStellen()));
+			tausenderstring = ZahlAlsWort.get(new Zahl(tausender));
 		}
-		tausender += "tausend";
+		tausenderstring += "tausend";
 
-		tausender += Hunderter.get(zahl);
-
-		return tausender;
+		int rest = zahl.getZahl() - tausender * 1_000;
+		if (rest > 0)
+		{
+			tausenderstring += ZahlAlsWort.get(new Zahl(rest));
+		}
+		return tausenderstring;
 	}
 }

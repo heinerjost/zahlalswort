@@ -171,6 +171,12 @@ public class ZahlAlsWortTest
 	}
 
 	@Test
+	void einhunderteins()
+	{
+		assertEquals("einhunderteins", ZahlAlsWort.get(101));
+	}
+
+	@Test
 	void einhundertfuenf()
 	{
 		assertEquals("einhundertfünf", ZahlAlsWort.get(105));
@@ -201,9 +207,40 @@ public class ZahlAlsWortTest
 	}
 
 	@Test
-	void eintausenfuenfhundertzweiundvierzig()
+	void eintausend()
 	{
-		assertEquals("eintausendfünfhundertzweiundvierzig", ZahlAlsWort.get(1542));
+		assertEquals("eintausend", ZahlAlsWort.get(1000));
+	}
+
+	@Test
+	void eintausendeins()
+	{
+		assertEquals("eintausendeins", ZahlAlsWort.get(1001));
+	}
+
+	@Test
+	void eintausendelf()
+	{
+		assertEquals("eintausendelf", ZahlAlsWort.get(1011));
+	}
+
+	@Test
+	void eintausendeinhundertelf()
+	{
+		assertEquals("eintausendeinhundertelf", ZahlAlsWort.get(1111));
+	}
+
+	@Test
+	void eintausendzweihundertelf()
+	{
+		assertEquals("eintausendzweihundertelf", ZahlAlsWort.get(1211));
+	}
+
+	@Test
+	void eintausendfuenfhundertzweiundvierzig()
+	{
+		assertEquals("eintausendfünfhundertzweiundvierzig",
+				ZahlAlsWort.get(1542));
 	}
 
 	@Test
@@ -219,6 +256,12 @@ public class ZahlAlsWortTest
 	}
 
 	@Test
+	void einundvierzigtausend()
+	{
+		assertEquals("einundvierzigtausend", ZahlAlsWort.get(41000));
+	}
+
+	@Test
 	void fuenfundfuenfzigtausendfuenfhundertfuenfundfuenfzig()
 	{
 		assertEquals("fünfundfünfzigtausendfünfhundertfünfundfünfzig",
@@ -228,7 +271,8 @@ public class ZahlAlsWortTest
 	@Test
 	void einhundertdreiundzwanzigtausendfünfhundertsiebenundsechzig()
 	{
-		assertEquals("einhundertdreiundzwanzigtausendvierhundertsechsundfünfzig",
+		assertEquals(
+				"einhundertdreiundzwanzigtausendvierhundertsechsundfünfzig",
 				ZahlAlsWort.get(123456));
 	}
 
@@ -256,7 +300,8 @@ public class ZahlAlsWortTest
 	@Test
 	void fuenfundfuenfzigBigDecimal()
 	{
-		assertEquals("fünfundfünfzig", ZahlAlsWort.get(new BigDecimal("55.66")));
+		assertEquals("fünfundfünfzig",
+				ZahlAlsWort.get(new BigDecimal("55.66")));
 	}
 
 	@Test
@@ -269,6 +314,13 @@ public class ZahlAlsWortTest
 	void fuenfundfuenfzigFloat()
 	{
 		assertEquals("fünfundfünfzig", ZahlAlsWort.get(Float.valueOf(55.66f)));
+	}
+
+	@Test
+	void einhunderteinundzwanzigtausendeinhundertdreiundzwanzig()
+	{
+		assertEquals("einhunderteinundzwanzigtausendeinhundertdreiundzwanzig",
+				ZahlAlsWort.get(121123));
 	}
 
 }
