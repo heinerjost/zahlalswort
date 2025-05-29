@@ -159,6 +159,30 @@ public class ZahlAlsWortTest
 	}
 
 	@Test
+	void sechzig()
+	{
+		assertEquals("sechzig", ZahlAlsWort.get(60));
+	}
+
+	@Test
+	void sechsundsechzig()
+	{
+		assertEquals("sechsundsechzig", ZahlAlsWort.get(66));
+	}
+
+	@Test
+	void siebzig()
+	{
+		assertEquals("siebzig", ZahlAlsWort.get(70));
+	}
+
+	@Test
+	void siebenundsiebzig()
+	{
+		assertEquals("siebenundsiebzig", ZahlAlsWort.get(77));
+	}
+
+	@Test
 	void neunundneunzig()
 	{
 		assertEquals("neunundneunzig", ZahlAlsWort.get(99));
@@ -204,6 +228,30 @@ public class ZahlAlsWortTest
 	void dreihundertneunundneunzig()
 	{
 		assertEquals("dreihundertneunundneunzig", ZahlAlsWort.get(399));
+	}
+
+	@Test
+	void sechshundertsechzig()
+	{
+		assertEquals("sechshundertsechzig", ZahlAlsWort.get(660));
+	}
+
+	@Test
+	void sechshundertsechsundsechzig()
+	{
+		assertEquals("sechshundertsechsundsechzig", ZahlAlsWort.get(666));
+	}
+
+	@Test
+	void siebenhundertsiebzig()
+	{
+		assertEquals("siebenhundertsiebzig", ZahlAlsWort.get(770));
+	}
+
+	@Test
+	void siebenhundertsiebenundsiebzig()
+	{
+		assertEquals("siebenhundertsiebenundsiebzig", ZahlAlsWort.get(777));
 	}
 
 	@Test
@@ -266,6 +314,32 @@ public class ZahlAlsWortTest
 	{
 		assertEquals("fünfundfünfzigtausendfünfhundertfünfundfünfzig",
 				ZahlAlsWort.get(55555));
+	}
+
+	@Test
+	void sechshundertsechzigtausen()
+	{
+		assertEquals("sechshundertsechzigtausend", ZahlAlsWort.get(660000));
+	}
+
+	@Test
+	void sechshundertsechsundsechzigtausend()
+	{
+		assertEquals("sechshundertsechsundsechzigtausend",
+				ZahlAlsWort.get(666000));
+	}
+
+	@Test
+	void siebenhundertsiebzigtausend()
+	{
+		assertEquals("siebenhundertsiebzigtausend", ZahlAlsWort.get(770000));
+	}
+
+	@Test
+	void siebenhundertsiebenundsiebzigtausend()
+	{
+		assertEquals("siebenhundertsiebenundsiebzigtausend",
+				ZahlAlsWort.get(777000));
 	}
 
 	@Test

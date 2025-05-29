@@ -36,6 +36,9 @@ class Zehner
 				return "achtzehn";
 			case 19:
 				return "neunzehn";
+			case 60:
+				return "sechzig";
+			case 70:
 			default:
 				return zwanzigbisneunundneunzig(zahl);
 		}
@@ -57,7 +60,16 @@ class Zehner
 		{
 			zehner = "zwanzig";
 		}
-		if (zahl.getZehnerStelle() > 2)
+		if (zahl.getZehnerStelle() == 6)
+		{
+			zehner = "sechzig";
+		}
+		else if (zahl.getZehnerStelle() == 7)
+		{
+			zehner = "siebzig";
+		}
+		if (zahl.getZehnerStelle() > 2 && zahl.getZehnerStelle() != 6
+				&& zahl.getZehnerStelle() != 7)
 		{
 			zehner = Einer.get(new Zahl(zahl.getZehnerStelle()));
 			if (zahl.getZehnerStelle() == 3)
